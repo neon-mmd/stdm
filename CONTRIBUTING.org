@@ -1,0 +1,25 @@
+* Things to consider before contributing.
+
+** Knowledge required
+
+- c++ basics
+- <cstdlib> & <cstddef> module in c++
+- [[https://linux.die.net/man/3/getopt_long]] ---- reference to <getopt.h> module in c++
+- <fstream> module for file management .
+- <stdio.h> & <iostream> for managing standard input and output.
+- <string> module in c++
+- <tabulate/table.hpp> module ----  https://github.com/p-ranav/tabulate
+- <exception> module for managing exceptions
+- Linux command line basics
+- launchers like fzf, dmenu, etc
+- appropos , man & tldr  command line tools.
+
+** guidlines
+
+- please be patient
+- treat everyone with respect --- ("give respect and take respect")
+- document your code properly
+- provide a brief description of what changes you made in the pull request
+- provide an apropriate header to pull requests
+
+  *NOTE:* The test directory is where the contributions should go. In simple terms, it is the working directory for this project.

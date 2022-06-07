@@ -1,0 +1,102 @@
+* STDM (search the damn manual)
+
+Linux  man page search engine written in c++ 
+
+* Quick Start
+
+*STDM* is a command line tool to search linux manual pages offline on the system and provides you with relevent information you need. It provides search results by providing excerpt from the manual instead of scrolling through the whole manual for relevent piece of information from the manual it provides you in a nice table format what you need increasing productivity and speed.
+
+** Display Options
+
+	-f	display the full manual with example manual if available
+	-s	search the manual page with the functionality
+	-e	give the example manual if available
+	-l	the number of lines of excerpt to display from the manual (default: 5)
+	-L	provide an appropriate launcher (default: fzf)
+	-S	search the manual by providing a search term should be used with option '-s' (default: None)
+
+** Examples
+
+*** search the manual name on the basis of functionality and read about it's functionality from the manual
+
+#+begin_src shell
+  stdm -s symlink
+#+end_src
+
+[[file:images/example-1-part-1.png]]
+
+select the manual you want to search from the menu.
+
+[[file:images/example-1-part-2.png]]
+
+select the excerpt you want to read from the manual about the functionality.
+
+[[file:images/example-1-part-3.png]]
+
+*** search the manual you know for specific things
+
+#+begin_src shell
+  stdm -S animate -s lolcat 
+#+end_src
+
+[[file:images/example-2-part-1.png]]
+
+[[file:images/example-2-part-2.png]]
+
+[[file:images/example-2-part-3.png]]
+
+*** increase the size of the excerpt.
+
+#+begin_src shell
+  stdm -l 10 -S animate -s lolcat
+#+end_src
+
+[[file:images/example-3-part-1.png]]
+
+*** use other launchers.
+
+#+begin_src shell
+ stdm -l 10 -L "dmenu -i -l 20 -p 'search'" -S link -s cp
+#+end_src
+
+display the menu with dmenu launcher.
+
+[[file:images/example-4-part-1.png]]
+
+[[file:images/example-4-part-2.png]]
+
+[[file:images/example-4-part-3.png]]
+
+* Installation
+
+** Arch Linux
+
+The package is available in the [[https://aur.archlinux.org][aur]] and in my arch repo
+
+#+begin_src shell
+  paru -S stdm-git
+#+end_src
+
+Or
+
+add the following lines in the pacman.conf.
+
+#+begin_src text
+  [neon-os-core-repo]
+  SigLevel = Optional DatabaseOptional
+  Server = https://gitlab.com/NEON-MMD/$repo/-/raw/main/$arch
+#+end_src
+
+then install it using pacman
+
+#+begin_src shell
+  sudo pacman -S stdm-git
+#+end_src
+
+* contributing
+
+Contributions are welcome, have a look at the [[file:CONTRIBUTING.org][CONTRIBUTING.org]] document for more information.
+
+* License
+
+The project is available under the [[file:LICENSE][GPLv3]] license.
