@@ -87,6 +87,12 @@ add the following lines in the pacman.conf.
   Server = https://gitlab.com/NEON-MMD/$repo/-/raw/main/$arch
 #+end_src
 
+before installing stdm from pacman. make sure you have *tabulate* c++ module dependency installed through the aur.
+
+#+begin_src shell
+  paru -S tabulate
+#+end_src
+
 then install it using pacman
 
 #+begin_src shell
