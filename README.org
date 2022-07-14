@@ -71,7 +71,7 @@ display the menu with dmenu launcher.
 
 ** Arch Linux
 
-The package is available in the [[https://aur.archlinux.org][aur]] and in my arch repo
+The package is available in the [[https://aur.archlinux.org/packages/stdm-git][aur]] and in neon-os (arch distro) repo
 
 #+begin_src shell
   paru -S stdm-git
@@ -93,11 +93,21 @@ before installing stdm from pacman. make sure you have *tabulate* c++ module dep
   paru -S tabulate
 #+end_src
 
+Sync the repository before installing it and also during the sync process it will complain about missing Keys. It is normal and accept the prompt to import it and you are good to go :). 
+
+#+begin_src shell
+  sudo pacman -Syyu
+#+end_src
+
 then install it using pacman
 
 #+begin_src shell
   sudo pacman -S stdm-git
 #+end_src
+
+** Other Distros
+
+currently the package is not available on other linux distros. But with contribution and support it can be made available on other distros as well.
 
 * contributing
 
