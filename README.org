@@ -1,6 +1,6 @@
 * STDM (search the damn manual)
 
-Linux  man page search engine written in c++ 
+Linux man page search engine written in c++ 
 
 * Quick Start
 
@@ -83,8 +83,17 @@ add the following lines in the pacman.conf.
 
 #+begin_src text
   [neon-os-core-repo]
-  SigLevel = Optional DatabaseOptional
+  SigLevel = Required DatabaseOptional
   Server = https://gitlab.com/NEON-MMD/$repo/-/raw/main/$arch
+#+end_src
+
+*Important:* add the key server, recieve the keys and sign the keys locally. 
+
+#+begin_src shell
+  grep -qxF "keyserver.ubuntu.com:80" /etc/pacman.d/gnupg/gpg.conf || echo "keyserver hkp://keyserver.ubuntu.com:80" | sudo tee -a /etc/pacman.d/gnupg/gpg.conf
+  grep -qxF "keyserver.ubuntu.com:443" /etc/pacman.d/gnupg/gpg.conf || echo "keyserver hkps://keyserver.ubuntu.com:443" | sudo tee -a /etc/pacman.d/gnupg/gpg.conf
+  sudo pacman-key --recv-key 51F9A14D1DEE561A
+  sudo pacman-key --lsign-key 51F9A14D1DEE561A
 #+end_src
 
 before installing stdm from pacman. make sure you have *tabulate* c++ module dependency installed through the aur.
@@ -109,9 +118,17 @@ then install it using pacman
 
 currently the package is not available on other linux distros. But with contribution and support it can be made available on other distros as well.
 
-* contributing
+* Contributing
 
-Contributions are welcome, have a look at the [[file:CONTRIBUTING.org][CONTRIBUTING.org]] document for more information.
+Contributions are welcome. It does not matter who you are you can still contribute to the project in your way :).
+
+** Not a developer but still want to contribute
+
+Here is [[https://youtu.be/FccdqCucVSI][video]] by Mr. Nick on how to contribute and credit to him as well
+
+** Developer
+
+If you are developer, have a look at the [[file:CONTRIBUTING.org][CONTRIBUTING.org]] document for more information.
 
 * License
 
